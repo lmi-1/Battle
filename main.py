@@ -261,3 +261,6 @@ class Game:
     def start(self):
         self.greet()
         self.loop()
+
+g = Game()
+g.start()

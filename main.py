@@ -99,6 +99,7 @@ class Board:
 
         self.ships.append(ship)
         self.contour(ship)
-        
+
 b = Board()
+b.add_ship(Ship(Dot(1, 2), 4, 0))
 print(b)

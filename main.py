@@ -51,4 +51,4 @@ class Ship:
         return shot in self.dots
 
 s =Ship(Dot(1, 2), 4, 0)
-print(s.dots())
+print(s.shooten(Dot(0, 2)))

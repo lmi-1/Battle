@@ -210,4 +210,3 @@ class Game:
         while board is None:
             board = self.try_board()
         return board
-    

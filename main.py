@@ -210,3 +210,13 @@ class Game:
         while board is None:
             board = self.try_board()
         return board
+
+    def greet(self):
+        print("-------------------")
+        print("  Приветсвуем Вас  ")
+        print("      в игре       ")
+        print("    морской бой    ")
+        print("------------------ ")
+        print(" формат ввода: x y ")
+        print(" x - номер строки  ")
+        print(" y - номер столбца ")

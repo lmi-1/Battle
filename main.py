@@ -45,3 +45,5 @@ class Ship:
             ship_dots.append(Dot(cur_x, cur_y))
 
         return ship_dots
+s =Ship(Dot(1, 2), 4, 0)
+print(s.dots())

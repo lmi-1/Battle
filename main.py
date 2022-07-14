@@ -30,6 +30,7 @@ class Ship:
         self.o = o
         self.lives = l
 
+    @property
     def dots(self):
         ship_dots = []
         for i in range(self.l):
@@ -45,5 +46,9 @@ class Ship:
             ship_dots.append(Dot(cur_x, cur_y))
 
         return ship_dots
+
+    def shooten(self, shot):
+        return shot in self.dots
+
 s =Ship(Dot(1, 2), 4, 0)
 print(s.dots())

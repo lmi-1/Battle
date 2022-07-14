@@ -71,6 +71,6 @@ class Board:
         if self.hid:
             res = res.replace("■", "O")
         return res
-    
-s =Ship(Dot(1, 2), 4, 0)
-print(s.shooten(Dot(0, 2)))
+
+b = Board()
+print(b)

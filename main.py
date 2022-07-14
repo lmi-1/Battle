@@ -126,6 +126,31 @@ class Board:
         print("Мимо!")
         return False
 
+    def begin(self):
+        self.busy = []
+
+    def defeat(self):
+        return self.count == len(self.ships)
+
+class Player:
+    def __init__(self, board, enemy):
+        self.board = board
+        self.enemy = enemy
+
+    def ask(self):
+        raise NotImplementedError()
+
+    def move(self):
+        while True:
+            try:
+                target = self.ask()
+                repeat = self.enemy.shot(target)
+                return repeat
+            except BoardException as e:
+                print(e)
+
+
+
 b = Board()
 b.add_ship(Ship(Dot(1, 2), 4, 0))
 print(b)

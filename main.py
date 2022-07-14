@@ -23,3 +23,9 @@ class Dot:
     def __repr__(self):
         return f"Dot({self.x}, {self.y})"
 
+class Ship:
+    def __init__(self, bow, l, o):
+        self.bow = bow
+        self.l = l
+        self.o = o
+        self.lives = l

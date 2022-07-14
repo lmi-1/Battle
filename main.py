@@ -74,6 +74,19 @@ class Board:
 
     def out(self,d):
         return not ((0 <= d.x < self.size) and (0 <= d.y < self.size))
-    
+
+    def contour(self, ship, verb = False):
+        near = [
+            (-1, -1), (-1, 0), (-1, 1),
+            (0, -1), (0, 0), (0, 1),
+            (1, -1), (1, 0), (1, 1)
+        ]
+        for d in ship.dots:
+            for dx, dy in near:
+                cur = Dot(d.x +dx, d.y+ dy)
+                if not(self.out(cur)) and cur not in self.busy:
+                    if verb:
+                        self.field[cur.x][cur.y] = "."
+                    self.busy.append(cur)
 b = Board()
 print(b)

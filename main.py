@@ -88,5 +88,17 @@ class Board:
                     if verb:
                         self.field[cur.x][cur.y] = "."
                     self.busy.append(cur)
+
+    def add_ship(self, ship):
+        for d in ship.dots:
+            if self.out(d) or d in self.busy:
+                raise BoardWrongShipException()
+        for d in ship.dots:
+            self.field[d.x][d.y] = "■"
+            self.busy.append(d)
+
+        self.ships.append(ship)
+        self.contour(ship)
+        
 b = Board()
 print(b)

@@ -72,5 +72,8 @@ class Board:
             res = res.replace("■", "O")
         return res
 
+    def out(self,d):
+        return not ((0 <= d.x < self.size) and (0 <= d.y < self.size))
+    
 b = Board()
 print(b)

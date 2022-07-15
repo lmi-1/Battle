@@ -85,10 +85,10 @@ class Board:
         ]
         for d in ship.dots:
             for dx, dy in near:
-                cur = Dot(d.x +dx, d.y+ dy)
+                cur = Dot(d.x + dx, d.y + dy)
                 if not(self.out(cur)) and cur not in self.busy:
                     if verb:
-                        self.field[cur.x][cur.y] = "."
+                        self.field[cur.x][cur.y] = "T"
                     self.busy.append(cur)
 
     def add_ship(self, ship):
@@ -124,7 +124,7 @@ class Board:
                     print("Корабль ранен!")
                     return True
 
-        self.field[d.x][d.y] = "."
+        self.field[d.x][d.y] = "T"
         print("Мимо!")
         return False
 
